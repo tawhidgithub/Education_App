@@ -48,7 +48,7 @@ class AppPages {
         binding: RegistrationBindings()),
     GetPage(
       name: _Paths.TABSCREEN,
-      page: () => const TabscreenView(),
+      page: () => const TabScreenView(),
       binding: TabscreenBinding(),
     ),
     GetPage(

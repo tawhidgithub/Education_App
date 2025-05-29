@@ -5,9 +5,10 @@ import 'extentions/hex_color.dart';
 class ColorManager{
 
   static Color primaryWhite = Colors.white;
-  static Color primaryColor = HexColor.fromHex("#096B68");
-  static Color secondaryColor = HexColor.fromHex("#129990");
-  static Color accentColor = HexColor.fromHex("#90D1CA");
+  static Color primaryColor = HexColor.fromHex("#1B56FD");
+  static Color secondaryColor = HexColor.fromHex("#578FCA");
+  static Color accentColor = HexColor.fromHex("#B5FCCD");
+  static Color accentTwoColor = HexColor.fromHex("#7AC6D2");
   static Color yellowPrimaryColor = HexColor.fromHex("#FFFBDE");
   static Color primaryColorWhite = HexColor.fromHex("#FFFFFF");
   static Color primaryColorWhiteFill = HexColor.fromHex("#FFFFFF").withOpacity(0.50);
@@ -60,6 +61,7 @@ class ColorManager{
   static Color neutral151515 = HexColor.fromHex('#151515');
   //static Color boxShadow = const Color.fromRGBO(53, 0, 105, 0.06);
   static Color blueColor = HexColor.fromHex('#FF0084FF');
+  static Color darkBlueColor = HexColor.fromHex('#03045e');
   static Color yellowColor = HexColor.fromHex('#EEBA00');
   static Color orangeColor = HexColor.fromHex('#E9730E');
   static Color redColor = HexColor.fromHex('#FF0000');

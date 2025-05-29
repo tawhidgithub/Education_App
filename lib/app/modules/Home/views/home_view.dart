@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:education_app/app/resources/LocalText.dart';
 import 'package:education_app/app/resources/color_manager.dart';
+import 'package:education_app/app/resources/drawerButton.dart';
+import 'package:education_app/app/resources/gridCardBox.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -14,7 +16,18 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(backgroundColor: Colors.blue),
+      drawer: Container(color: Colors.white, width: 300,
+      child: ListView.builder(
+
+          itemCount: controller.DrawerFieldNameLisr.length,
+          itemBuilder: (context,index){
+
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 5),
+          child: DrawerBtn(btnText: controller.DrawerFieldNameLisr[index]),
+        );
+      }),),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
@@ -63,6 +76,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
+
             /// GritView
             SliverToBoxAdapter(
               child: Padding(
@@ -90,76 +104,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                         itemCount: 4,
                         itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: (){
-                              
-                              
-                              print("----------------Click on Tab");
-                              
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: ColorManager.accentColor,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(
-                                    height: 180,
-                            
-                                    width: double.infinity,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.only(
-                                        topRight: Radius.circular(20),
-                                        topLeft: Radius.circular(20),
-                                      ),
-                                      child: Image.asset(
-                                        "assets/image/bg.jpg",
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 10,
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                            
-                                      children: [
-                                        LocalText(
-                                          text: "Campus",
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(top: 5),
-                                          child: Row(
-                            
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                            
-                                            children: [
-                                              LocalText(
-                                                text: "Location :-",
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                              Expanded(
-                                                child: LocalText(
-                                                  text: "Locationlkjhkhulggk",
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
+                          return CardBox(onTap: (){}, subtitle: "subtitle", title: "title", imgUrl: "imgUrl");
                         },
                       ),
                     ),
@@ -167,7 +112,7 @@ class HomeView extends GetView<HomeController> {
                 ),
               ),
             ),
-            
+
             SliverToBoxAdapter(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -182,12 +127,10 @@ class HomeView extends GetView<HomeController> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-
-
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

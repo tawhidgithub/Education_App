@@ -20,4 +20,17 @@ class HomeController extends GetxController {
   }
 
   void increment() => count.value++;
+
+
+
+  List<String> DrawerFieldNameLisr=[
+    "ABOUT API",
+    "DEPARTMENTS",
+    "ACADEMIC",
+    "TEACHER & STAFF",
+    "STUDENT",
+    "RESULTS",
+    "CONTACTS"
+  ];
+
 }

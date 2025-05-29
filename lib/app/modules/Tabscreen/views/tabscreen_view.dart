@@ -1,3 +1,4 @@
+import 'package:education_app/app/resources/color_manager.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -5,12 +6,16 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 import '../controllers/tabscreen_controller.dart';
 
-class TabscreenView extends GetView<TabscreenController> {
-  const TabscreenView({super.key});
+class TabScreenView extends GetView<TabscreenController> {
+  const TabScreenView({super.key});
   @override
   Widget build(BuildContext context) {
  return   PersistentTabView(
+
       context,
+      margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+
+
       // controller: _controller,
       screens: controller.buildScreens(),
       items: controller.navBarsItems(),
@@ -19,9 +24,13 @@ class TabscreenView extends GetView<TabscreenController> {
       stateManagement: true, // Default is true.
       hideNavigationBarWhenKeyboardAppears: true,
       // popBehaviorOnSelectedNavBarItemPress: PopActionScreensType.all,
-      padding: const EdgeInsets.only(top: 8),
-      backgroundColor: Colors.grey.shade900,
+      padding: const EdgeInsets.symmetric(),
+      backgroundColor: ColorManager.blueColor,
       isVisible: true,
+
+      decoration: NavBarDecoration(
+        borderRadius: BorderRadius.circular(15)
+      ),
       animationSettings: const NavBarAnimationSettings(
         navBarItemAnimation: ItemAnimationSettings( // Navigation Bar's items animation properties.
           duration: Duration(milliseconds: 400),
@@ -34,7 +43,7 @@ class TabscreenView extends GetView<TabscreenController> {
         ),
       ),
       confineToSafeArea: true,
-      navBarHeight: kBottomNavigationBarHeight,
+      navBarHeight: 80,
       navBarStyle: NavBarStyle.style1, // Choose the nav bar style with this property
     );
   }
